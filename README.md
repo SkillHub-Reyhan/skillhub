@@ -79,7 +79,7 @@ Pastikan Anda sudah menginstal:
 ### **Langkah 1: Clone Repositori**
 
 ```bash
-git clone https://github.com/kevinchr-dev/skillhub.git
+git clone https://github.com/SkillHub-Reyhan/skillhub.git
 cd skillhub
 ```
 
