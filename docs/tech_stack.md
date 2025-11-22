@@ -1,10 +1,10 @@
-# 💻 Tech Stack (Spesifikasi Teknis) — SkillHub
+# Tech Stack (Spesifikasi Teknis)
 
 Dokumen ini mendeskripsikan teknologi utama yang digunakan untuk membangun aplikasi **SkillHub**, mencakup Backend, Frontend, serta Tools pendukung selama pengembangan.
 
 ---
 
-## 🗺️ Technology Overview
+<!-- ## Technology Overview
 
 > **Catatan:** Ganti placeholder di bawah dengan screenshot Tech Stack Diagram Anda.
 
@@ -40,9 +40,9 @@ Dokumen ini mendeskripsikan teknologi utama yang digunakan untuk membangun aplik
 
 </details>
 
----
+--- -->
 
-## 📝 Penjelasan Detail Teknologi
+## Penjelasan Detail Teknologi
 
 ### 1. **Backend (Server-Side)**
 
@@ -96,14 +96,13 @@ Fungsional saat pembuatan demo dan pengujian.
 Framework testing untuk:
 
 * Unit test
-* Integration test
-* Regression test
+* Feature test
 
-Memastikan fitur berjalan sesuai standar sebelum rilis.
+Memastikan fitur berjalan sesuai standar.
 
 ---
 
-## 📦 Ringkasan Versi
+## Ringkasan Versi
 
 | Teknologi        | Versi | Kegunaan                   |
 | ---------------- | ----- | -------------------------- |
@@ -111,4 +110,5 @@ Memastikan fitur berjalan sesuai standar sebelum rilis.
 | **Tailwind CSS** | 4.1.x | Styling UI                 |
 | **Vite**         | 7.2.x | Build Tool Frontend        |
 | **PHP**          | 8.2+  | Bahasa pemrograman backend |
+| **MySQL**        | 12.1.x| Database                   |
 

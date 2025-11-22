@@ -1,21 +1,19 @@
-# 📘 Entity Relationship Diagram (ERD) — SkillHub
+# Entity Relationship Diagram (ERD)
 
-Dokumen ini berisi skema database aplikasi **SkillHub** dalam format Markdown, lengkap dengan desain, struktur tabel, relasi, dan penjelasan detail. Seluruh code snippet dibuat menggunakan **fold/hideable sections**.
+Dokumen ini berisi skema database aplikasi **SkillHub**, lengkap dengan desain, struktur tabel, relasi, dan penjelasan detail.
 
 ---
 
-## 🗺️ ERD Overview
+## ERD Overview
 
 <!-- > **Catatan:** Silakan ganti placeholder gambar di bawah dengan screenshot ERD dari dbdiagram.io. -->
 
-![ERD Placeholder](/docs/erd_skillhub.png)
+![ERD Image](/docs/skillhub-erd.png)
 
----
 
-## 🗂️ **DBML Source Code**
 
 <details>
-<summary><strong>🔍 Klik untuk melihat Source Code DBML</strong></summary>
+<summary>Snipped Code for dbdiagram.io</summary>
 
 ```dbml
 // --- SkillHub Core Logic ---
@@ -52,19 +50,16 @@ Table "course_student" {
 // --- Relationships ---
 
 // Relasi Many-to-Many: Student enrolls in Course
-Ref "student_enrollment":"students"."id" < "course_student"."student_id" [delete: cascade]
+Ref "student_enrollment":"students"."id" < "course_student"."student_id" [delete: restrict]
 
-Ref "course_enrollment":"courses"."id" < "course_student"."course_id" [delete: cascade]
-
-// Relasi User Session (Optional visualisation)
-Ref "user_session":"users"."id" < "sessions"."user_id"
+Ref "course_enrollment":"courses"."id" < "course_student"."course_id" [delete: restrict]
 ```
 
 </details>
 
 ---
 
-## 📝 Penjelasan Detail Struktur Database
+## Penjelasan Detail Struktur Database
 
 ### 1. **Identifikasi Unik Modern (UUID v7)**
 
@@ -107,24 +102,22 @@ Tabel `students` dan `courses` memiliki kolom `deleted_at`. Tujuannya:
 * Menghapus data **tanpa benar-benar menghilangkannya**.
 * Memudahkan **recovery** dan **audit trail**.
 
-#### ✔ Referential Integrity (Cascade)
+#### ✔ Referential Integrity (Restrict)
 
-Relasi di pivot menggunakan `ON DELETE CASCADE`:
+Relasi di pivot menggunakan `ON DELETE RESTRICT`:
 
-* Jika student dihapus permanen, otomatis riwayat enrollment di pivot ikut terhapus.
-* Menghindari **orphan records**.
+* Database akan **menolak/mencegah** penghapusan data master (Student/Course) secara permanen jika data tersebut masih digunakan di tabel pivot (Enrollment).
+* Menjaga integritas data dengan memastikan tidak ada data induk yang hilang selama masih memiliki ketergantungan.
 
 ---
 
-## 📦 Ringkasan Struktur
+## Ringkasan Struktur
 
 | Tabel              | Deskripsi                           |
 | ------------------ | ----------------------------------- |
-| **users**          | Default Laravel auth system         |
 | **students**       | Data peserta SkillHub               |
 | **courses**        | Data kelas atau pelatihan           |
 | **course_student** | Pivot enrollment Students ↔ Courses |
 
----
 
-Jika Anda ingin saya buatkan versi **PDF**, **DOCX**, atau **di-export ke Notion**, cukup beri tahu! 🚀
+

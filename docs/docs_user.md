@@ -1,16 +1,16 @@
-# 📖 Panduan Pengguna (User Manual) — SkillHub
+# Panduan Pengguna (User Manual)
 
-Selamat datang di **SkillHub**! Sistem manajemen kursus modern untuk mengelola data **peserta**, **kelas**, dan **pendaftaran pelatihan** dengan cepat dan efisien.
+Selamat datang di **SkillHub**! Sistem manajemen kursus modern untuk mengelola data **peserta**, **kelas**, dan **pendaftaran pelatihan**.
 
 Dokumen ini akan memandu Anda memahami dan menggunakan seluruh fitur aplikasi SkillHub.
 
 ---
 
-## 🏠 1. Halaman Utama (Dashboard)
+## 1. Halaman Utama (Dashboard)
 
 Dashboard adalah halaman pertama yang muncul saat Anda membuka aplikasi.
 
-### 📊 Apa yang ditampilkan?
+### Apa yang ditampilkan?
 
 * **Kartu Statistik** — Menunjukkan total:
 
@@ -28,7 +28,7 @@ Dashboard adalah halaman pertama yang muncul saat Anda membuka aplikasi.
 
 ---
 
-## 👥 2. Manajemen Peserta (Students)
+## 2. Manajemen Peserta (Students)
 
 Digunakan untuk mengelola seluruh data peserta pelatihan.
 
@@ -65,7 +65,7 @@ Peserta baru akan muncul di daftar sebelah kanan.
 
 ---
 
-## 📚 3. Manajemen Kelas (Courses)
+## 3. Manajemen Kelas (Courses)
 
 Menu ini digunakan untuk mengelola katalog pelatihan.
 
@@ -87,7 +87,7 @@ Menu ini digunakan untuk mengelola katalog pelatihan.
 
 ---
 
-## 📝 4. Pendaftaran (Enrollment)
+## 4. Pendaftaran (Enrollment)
 
 Fitur untuk menghubungkan Peserta dengan Kelas.
 
@@ -107,23 +107,3 @@ Jika berhasil, akan muncul notifikasi **hijau**.
 1. Masuk menu **Peserta**.
 2. Klik **Detail** pada siswa.
 3. Pada bagian *Kelas yang Diikuti*, klik **Batalkan Kelas** di samping nama kelas.
-
----
-
-## 💡 Pertanyaan Umum (FAQ)
-
-### **Q: Apakah data yang dihapus bisa dikembalikan?**
-
-**A:** Ya. Sistem menggunakan **Soft Delete**, sehingga data dapat dipulihkan oleh tim IT.
-
-### **Q: Apakah satu email bisa dipakai dua siswa?**
-
-**A:** Tidak. Email bersifat **unik** sebagai identitas utama.
-
-### **Q: Berapa maksimal kelas yang boleh diambil satu siswa?**
-
-**A:** Tidak ada batasan. Siswa boleh mengambil semua kelas yang tersedia.
-
----
-
-**Dokumentasi diperbarui terakhir pada:** 2025-11-22

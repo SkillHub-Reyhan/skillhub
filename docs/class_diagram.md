@@ -1,41 +1,31 @@
-# 🏗️ Class Diagram (Arsitektur Backend) — SkillHub
+# Class Diagram (Arsitektur Backend)
 
 Dokumen ini menampilkan arsitektur backend aplikasi **SkillHub** menggunakan pendekatan **MVC (Model-View-Controller)**. Diagram ini menjelaskan alur interaksi antar komponen, terutama Controller dan Model.
 
 ---
 
-## 🗺️ Architecture Overview
+## Architecture Overview
 
-> **Catatan:** Ganti placeholder di bawah ini dengan screenshot Class Diagram dari Mermaid Chart.
 
-![Class Diagram Placeholder](https://placehold.co/800x400?text=Class+Diagram+Here)
-
----
-
-## 🗂️ **Mermaid Source Code**
+![Class Diagram Image](/docs/skillhub-class_diagram.png)
 
 <details>
-<summary><strong>🔍 Klik untuk melihat Source Code Mermaid</strong></summary>
+<summary>Snipped Code mermaidchart.com</summary>
 
 ```mermaid
 classDiagram
-    %% Inheritance Definitions
     Controller <|-- DashboardController
     Controller <|-- StudentController
     Controller <|-- CourseController
     Controller <|-- EnrollmentController
     Model <|-- Student
     Model <|-- Course
-
-    %% Abstract Classes
     class Controller {
         <<Abstract>>
     }
     class Model {
         <<Eloquent>>
     }
-
-    %% Controllers
     class DashboardController {
         +index() View
     }
@@ -63,8 +53,6 @@ classDiagram
         +showCourseStudents(string courseId) View
         +destroy(Request request) RedirectResponse
     }
-
-    %% Models
     class Student {
         +String name
         +String email
@@ -80,15 +68,12 @@ classDiagram
         +newUniqueId() String
         +students() BelongsToMany
     }
-
-    %% Relationships
     StudentController ..> Student : uses
     CourseController ..> Course : uses
     EnrollmentController ..> Student : uses
     EnrollmentController ..> Course : uses
     DashboardController ..> Student : reads
     DashboardController ..> Course : reads
-
     Student "*" -- "*" Course : enrolls
 ```
 
@@ -96,7 +81,7 @@ classDiagram
 
 ---
 
-## 📝 Penjelasan Detail Komponen
+## Penjelasan Detail Komponen
 
 ### 1. **Controller Layer (Logika Bisnis)**
 
@@ -120,11 +105,11 @@ Ada empat Controller utama pada arsitektur SkillHub:
 
 Model di Laravel berfungsi sebagai representasi tabel database.
 
-#### ✔ Menggunakan Trait `HasUuids`
+#### Menggunakan Trait `HasUuids`
 
 Model **Student** dan **Course** memiliki mekanisme generator UUID v7 otomatis untuk primary key.
 
-#### ✔ Relasi Many-to-Many
+#### Relasi Many-to-Many
 
 Mengimplementasikan relasi:
 
@@ -135,7 +120,7 @@ Relasi ini menggunakan pivot table `course_student` di database.
 
 ---
 
-## 📦 Ringkasan Interaksi
+## Ringkasan Interaksi
 
 | Komponen       | Tipe     | Tanggung Jawab                                       |
 | -------------- | -------- | ---------------------------------------------------- |

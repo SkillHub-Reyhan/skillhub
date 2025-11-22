@@ -1,14 +1,14 @@
-# 🛠️ SkillHub Developer Documentation
+# Developer Documentation
 
-Dokumen ini memberikan panduan teknis lengkap bagi developer yang bekerja pada proyek **SkillHub**, mencakup struktur folder, penjelasan controller, model, alur data, hingga konfigurasi database.
+Dokumen ini memberikan panduan teknis lengkap bagi developer untuk mengembangkan proyek **SkillHub**, mencakup struktur folder, penjelasan controller, model, alur data, hingga konfigurasi database.
 
 ---
 
-## 📂 Struktur Proyek (MVC Architecture)
+## Struktur Proyek (MVC Architecture)
 
 SkillHub dibangun menggunakan **Laravel 12** dengan struktur folder standar MVC.
 
-### 1. 🕹️ **Controllers** (`app/Http/Controllers/`)
+### 1. **Controllers** (`app/Http/Controllers/`)
 
 Tempat logika bisnis utama berada.
 
@@ -21,7 +21,7 @@ Tempat logika bisnis utama berada.
 
 ---
 
-### 2. 🗃️ **Models** (`app/Models/`)
+### 2. **Models** (`app/Models/`)
 
 Representasi tabel database & relasi.
 
@@ -33,7 +33,7 @@ Representasi tabel database & relasi.
 
 ---
 
-### 3. 🎨 **Views** (`resources/views/`)
+### 3. **Views** (`resources/views/`)
 
 Menggunakan **Blade Template** sebagai UI.
 
@@ -45,14 +45,14 @@ Menggunakan **Blade Template** sebagai UI.
 
 ---
 
-## 🧠 Penjelasan Detail Fungsi (Code Reference)
+## Penjelasan Detail Fungsi (Code Reference)
 
 ## A. **EnrollmentController.php**
 
 Controller ini menangani relasi Many-to-Many & validasi.
 
 <details>
-<summary><strong>🔍 Lihat Detail Fungsi</strong></summary>
+<summary><strong>Lihat Detail Fungsi</strong></summary>
 
 ### **1. store(Request $request)**
 
@@ -94,7 +94,7 @@ $student->courses()->detach($request->course_id);
 Digunakan untuk menampilkan statistik pada halaman utama.
 
 <details>
-<summary><strong>🔍 Lihat Detail Fungsi</strong></summary>
+<summary><strong>Lihat Detail Fungsi</strong></summary>
 
 ### **index()**
 
@@ -120,7 +120,7 @@ Course::withCount('students')
 Model menggunakan UUID v7 untuk primary key.
 
 <details>
-<summary><strong>🔍 Lihat Detail Model</strong></summary>
+<summary><strong>Lihat Detail Model</strong></summary>
 
 ### **newUniqueId()**
 
@@ -147,7 +147,7 @@ return $this->belongsToMany(Student::class);
 
 ---
 
-## 🌐 Routes (`routes/web.php`)
+## Routes (`routes/web.php`)
 
 Daftar endpoint URL utama.
 
@@ -161,7 +161,7 @@ Daftar endpoint URL utama.
 
 ---
 
-## ⚙️ Konfigurasi Database & Seeder
+## Konfigurasi Database & Seeder
 
 ### **Migrasi Database (Migrations)**
 
@@ -181,23 +181,6 @@ Menggunakan **Faker Locale: id_ID**.
 * Membuat 20 siswa acak
 * Setiap siswa terdaftar ke 1–3 kelas secara random
 
----
 
-## 🚀 Tips Pengembangan Lanjutan
-
-### **UUID di Frontend**
-
-Gunakan tipe kolom `CHAR(36)` untuk foreign key yang merujuk ke UUID.
-
-### **Styling**
-
-SkillHub menggunakan **Tailwind CSS v4**.
-
-* Tidak perlu `tailwind.config.js` kompleks
-* Tailwind v4 otomatis membaca file Blade
-
-### **Icons**
-
-Gunakan **Heroicons (SVG)** untuk konsistensi UI.
 
 

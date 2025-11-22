@@ -32,6 +32,7 @@ class DocumentationController extends Controller
             'tech_stack' => 'Tech Stack',
             'erd' => 'ERD Database',
             'class_diagram' => 'Class Diagram',
+            'testing_report' => 'Hasil Testing'
         ];
 
         return view('docs.show', compact('htmlContent', 'menu', 'file'));

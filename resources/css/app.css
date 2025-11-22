@@ -34,15 +34,32 @@
         --tw-prose-td-borders: #27272a;
     }
 
-    /* Paksa styling untuk elemen markdown dasar jika class 'prose' gagal */
+   /* Paksa styling untuk elemen markdown dasar */
     .markdown-content h1 { @apply text-3xl font-bold text-white mb-6 mt-8; }
     .markdown-content h2 { @apply text-2xl font-semibold text-white mb-4 mt-8 pb-2 border-b border-zinc-800; }
     .markdown-content h3 { @apply text-xl font-semibold text-white mb-3 mt-6; }
+    
+    /* Styling Paragraf Umum */
     .markdown-content p { @apply mb-4 leading-relaxed text-zinc-300; }
-    .markdown-content ul { @apply list-disc list-inside mb-4 space-y-1 text-zinc-300; }
-    .markdown-content ol { @apply list-decimal list-inside mb-4 space-y-1 text-zinc-300; }
+
+    /* --- PERBAIKAN 1: Styling List --- */
+    /* Gunakan list-outside dan berikan margin kiri agar bullet terlihat rapi */
+    .markdown-content ul { @apply list-disc list-outside ml-5 mb-4 space-y-1 text-zinc-300; }
+    .markdown-content ol { @apply list-decimal list-outside ml-5 mb-4 space-y-1 text-zinc-300; }
+
+    /* --- PERBAIKAN 2: Reset Margin di dalam List --- */
+    /* Menghilangkan margin besar pada paragraf yang berada di dalam list item (li) */
+    .markdown-content li p { @apply mb-1; }
+    .markdown-content li > p:last-child { @apply mb-0; }
+
     .markdown-content a { @apply text-indigo-400 hover:text-indigo-300 underline underline-offset-4; }
-    .markdown-content blockquote { @apply border-l-4 border-indigo-500 pl-4 italic text-zinc-400 bg-zinc-900/50 py-2 pr-4 rounded-r-lg mb-4; }
+
+    /* --- PERBAIKAN 3: Blockquote (Tips) --- */
+    /* Ganti background ke 'bg-zinc-800/50' agar lebih terang/kontras dari background body */
+    .markdown-content blockquote { 
+        @apply border-l-4 border-indigo-500 pl-4 italic text-zinc-300 bg-zinc-800/50 py-3 pr-4 rounded-r-lg mb-6; 
+    }
+
     .markdown-content code { @apply bg-zinc-800 text-zinc-200 px-1.5 py-0.5 rounded text-sm font-mono; }
     .markdown-content pre { @apply bg-[#0d1117] p-4 rounded-xl overflow-x-auto mb-6 border border-zinc-800; }
     .markdown-content pre code { @apply bg-transparent p-0 text-sm text-zinc-300 block; }
@@ -52,7 +69,6 @@
     .markdown-content td { @apply p-3 border-b border-zinc-800 text-zinc-400 text-sm; }
     .markdown-content hr { @apply border-zinc-800 my-8; }
     
-    /* Styling khusus untuk tag <details> dan <summary> */
     .markdown-content details { @apply bg-zinc-900/30 border border-zinc-800 rounded-xl mb-4 overflow-hidden; }
     .markdown-content summary { @apply cursor-pointer p-4 font-medium text-zinc-300 hover:bg-zinc-900 hover:text-white transition-colors list-none flex items-center gap-2 select-none; }
     .markdown-content details[open] summary { @apply border-b border-zinc-800 bg-zinc-900 text-white; }
