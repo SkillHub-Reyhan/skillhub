@@ -178,6 +178,26 @@ Menguji endpoint dan fitur utama secara otomatis.
 
 ---
 
+## 📚 Dokumentasi & Wiki
+
+Aplikasi ini dilengkapi dengan dokumentasi internal yang dapat diakses langsung melalui browser saat aplikasi berjalan. Dokumentasi mencakup panduan pengguna, teknis, laporan testing, hingga rancangan desain.
+
+Pastikan server berjalan (`php artisan serve`), lalu akses halaman berikut:
+
+| Topik Dokumentasi | Deskripsi | URL Akses |
+| :--- | :--- | :--- |
+| **User Guide** | Panduan lengkap penggunaan aplikasi untuk pengguna akhir (Siswa/Admin). | [`/wiki/docs_user`](http://localhost:8000/wiki/docs_user) |
+| **Developer Guide** | Panduan teknis untuk pengembang (Setup, Struktur Folder, Deployment). | [`/wiki/docs_developer`](http://localhost:8000/wiki/docs_developer) |
+| **Tech Stack** | Daftar teknologi, framework, dan library yang digunakan dalam proyek ini. | [`/wiki/tech_stack`](http://localhost:8000/wiki/tech_stack) |
+| **Database & ERD** | Diagram relasi database (ERD), skema tabel, dan aturan integritas data. | [`/wiki/erd`](http://localhost:8000/wiki/erd) |
+| **Class Diagram** | Diagram arsitektur, alur interaksi antar komponen. | [`/wiki/class_diagram`](http://localhost:8000/wiki/class_diagram) |
+| **Testing Report** | Laporan hasil otomatisasi pengujian (Unit & Feature Testing). | [`/wiki/testing_report`](http://localhost:8000/wiki/testing_report) |
+| **Wireframe UI/UX** | Laporan rancangan desain awal (Low-Fidelity Wireframe). | [`/wiki/wireframe_report`](http://localhost:8000/wiki/wireframe_report) |
+
+![Wiki](/docs/skillhub-wiki.png)
+
+---
+
 ## 🤝 Kontribusi
 
 Kontribusi sangat diterima! Ikuti langkah berikut:
